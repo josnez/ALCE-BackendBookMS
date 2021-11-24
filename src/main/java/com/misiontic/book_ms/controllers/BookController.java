@@ -9,16 +9,28 @@ import java.util.List;
 
 @RestController
 public class BookController {
+
     private final BookRepository bookRepository;
 
     public BookController(BookRepository bookRepository){
         this.bookRepository = bookRepository;
     }
 
+    @GetMapping("/book/{id}")
+    Book getBook(@PathVariable Integer id){
+        return bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException("No se encontro ningun libro"
+                ));
+    }
+
     @GetMapping("/books/{idOwner}")
-    List<Book> getBook(@PathVariable Integer idOwner){
-        return bookRepository.findByIdOwner(idOwner)
-                .orElseThrow(() -> new BookNotFoundException("No se encontro ningun libro asociado al usuario"
-                    ));
+    List<Book> getBooks(@PathVariable Integer idOwner){
+        List<Book> booksUser = bookRepository.findByIdOwner(idOwner);
+        return booksUser;
+    }
+
+    @PostMapping("/book")
+    Book newBook(@RequestBody Book book) {
+        return  bookRepository.save(book);
     }
 }
