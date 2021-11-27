@@ -16,6 +16,11 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
+    @GetMapping("/")
+    String checkMessage(){
+        return "Everything went well, backend to the air baby";
+    }
+
     @GetMapping("/book/{id}")
     Book getBook(@PathVariable Integer id){
         return bookRepository.findById(id)
