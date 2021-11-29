@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 public class Book {
 
     @Id
-    private int id;
+    private String id;
     private String title;
     private String author;
     private String editorial;
@@ -19,7 +19,7 @@ public class Book {
     private int idAplicant;
     private boolean requested;
 
-    public Book(int id, String title, String author, String editorial, String genre, String year, String physicalState, String edition, String language, int idOwner) {
+    public Book(String id, String title, String author, String editorial, String genre, String year, String physicalState, String edition, String language, int idOwner) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -28,11 +28,12 @@ public class Book {
         this.year = year;
         this.physicalState = physicalState;
         this.edition = edition;
+        this.state = "available";
         this.language = language;
         this.idOwner = idOwner;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
