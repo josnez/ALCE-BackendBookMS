@@ -39,9 +39,9 @@ public class BookController {
 
     //traer todos los libros
     @GetMapping("/getAllBooks")
-    List<Book> getAllBooks(){
-
-        return getAllBooks();
+     List<Book> getAllBooks()
+    {
+        return bookRepository.findAll();
     }
 
     @PostMapping("/book")
