@@ -24,7 +24,7 @@ public class BookController {
     }
 
     @GetMapping("/book/{id}")
-    Book getBook(@PathVariable Integer id){
+    Book getBook(@PathVariable String id){
         return bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException("No se encontró ningún libro"
                 ));
@@ -42,13 +42,13 @@ public class BookController {
     }
 
     @PutMapping("/book/{id}")
-    Book updateBook (@PathVariable Integer id, @RequestBody Book bookDetails) {
+    Book updateBook (@PathVariable String id, @RequestBody Book bookDetails) {
         bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException("No se encontró ningún libro"));
         return bookRepository.save(bookDetails);
     }
 
     @DeleteMapping("/book/{id}")
-    ResponseEntity<?> deleteBook(@PathVariable Integer id){
+    ResponseEntity<?> deleteBook(@PathVariable String id){
         Book book =bookRepository.findById(id).orElseThrow(()->new BookNotFoundException("No se encontró ningún libro"));
         bookRepository.delete(book);
         return new ResponseEntity<>("El libro fue eliminado", HttpStatus.OK);
