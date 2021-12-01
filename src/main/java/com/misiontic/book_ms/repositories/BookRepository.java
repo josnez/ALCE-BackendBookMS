@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface BookRepository extends MongoRepository<Book, String>{
     List<Book> findByIdOwner(int idOwner);
-
+    List<Book> findByIdAplicant(int idAplicant);
 }
 
