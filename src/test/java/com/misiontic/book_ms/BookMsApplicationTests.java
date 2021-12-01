@@ -1,10 +1,10 @@
-package com.alce.booksmanagement_ms;
+package com.misiontic.book_ms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BooksmanagementMsApplicationTests {
+class BookMsApplicationTests {
 
 	@Test
 	void contextLoads() {

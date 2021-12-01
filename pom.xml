@@ -8,11 +8,11 @@
 		<version>2.6.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.alce</groupId>
-	<artifactId>booksmanagement_ms</artifactId>
+	<groupId>com.misiontic</groupId>
+	<artifactId>book_ms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>booksmanagement_ms</name>
-	<description>Microservice Books Management</description>
+	<name>book_ms</name>
+	<description>This is an example of a microservice using spring and java</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
