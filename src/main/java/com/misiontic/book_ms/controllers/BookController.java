@@ -47,7 +47,7 @@ public class BookController {
     //traer todos los libros de todos los usuarios excepto los que estan en estado de intercambio o solicitados, filtrados por nombre
     @GetMapping("/books/getAllBooksAvailable/{tittle}")
     List<Book> getAllBooksTittle(@PathVariable String tittle){
-        List<Book> booksTittle = bookRepository.findByTittle(tittle);
+        List<Book> booksTittle = bookRepository.findByTitle(tittle);
 
         List<Book> booksTittleFilter = new ArrayList<>();
         for (Book book : booksTittle){
